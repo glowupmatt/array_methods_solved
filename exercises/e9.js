@@ -6,9 +6,14 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+  let statedPLanet;
+  data.planets.filter((planet) => {
+    if (planet.name === "Earth") {
+      statedPLanet = planet;
+    }
+  });
+  return statedPLanet;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"

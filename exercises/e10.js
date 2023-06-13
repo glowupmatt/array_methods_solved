@@ -6,9 +6,14 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
+  let selectedAstroid;
+  data.asteroids.filter((droid) => {
+    if (droid.name === asteroidName) {
+      selectedAstroid = droid;
+    }
+  });
+  return selectedAstroid;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

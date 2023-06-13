@@ -7,6 +7,19 @@
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
+  const yearCount = {};
+  let result;
+  data.asteroids.filter((droid) => {
+    const year = droid.discoveryYear;
+    if (yearCount[year]) yearCount[year] += 1;
+    else yearCount[year] = 1;
+
+    if (!result) result = year;
+    else if (Math.max(yearCount[year], yearCount[result]) === yearCount[year])
+      result = year;
+  });
+
+  return result;
 }
 
 // === TEST YOURSELF ===

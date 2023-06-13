@@ -6,9 +6,14 @@ import { data } from "../data/data";
 
 export function getAveragePlanetsTemperature(data) {
   // Your code goes here...
+  const tempArr = [];
+  let tempAvg;
+  data.planets.filter((planet) => {
+    tempArr.push(planet.avgTemp);
+  });
+  tempAvg = tempArr.reduce((a, c) => a + c, 0) / tempArr.length;
+  return tempAvg;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"
