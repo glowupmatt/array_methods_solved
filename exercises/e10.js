@@ -6,13 +6,10 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
-  let selectedAstroid;
-  data.asteroids.filter((droid) => {
-    if (droid.name === asteroidName) {
-      selectedAstroid = droid;
-    }
-  });
-  return selectedAstroid;
+
+  return data.asteroids
+    .filter((droid) => droid.name === asteroidName)
+    .map((droid) => droid)[0];
 }
 
 // === TEST YOURSELF ===

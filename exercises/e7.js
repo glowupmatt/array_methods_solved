@@ -6,14 +6,10 @@
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
-  const planetNames = [];
-  data.planets.filter((planet) => {
-    if (planet.moonsCount) {
-      planetNames.push(planet.name);
-    }
-  });
 
-  return planetNames;
+  return data.planets
+    .filter((planet) => planet.moonsCount)
+    .map((planet) => planet.name);
 }
 
 // === TEST YOURSELF ===

@@ -6,13 +6,10 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
-  let statedPLanet;
-  data.planets.filter((planet) => {
-    if (planet.name === "Earth") {
-      statedPLanet = planet;
-    }
-  });
-  return statedPLanet;
+
+  return data.planets
+    .filter((planet) => planet.name === "Earth")
+    .map((planet) => planet)[0];
 }
 
 // === TEST YOURSELF ===

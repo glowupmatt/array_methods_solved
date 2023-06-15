@@ -6,13 +6,14 @@ import { data } from "../data/data";
 
 export function getOrbitalPeriodsSum(data) {
   // Your code goes here...
-  const orbitalArr = [];
-  let orbitalSum;
-  data.asteroids.filter((droid) => {
-    orbitalArr.push(droid.orbitalPeriod);
-  });
-  orbitalSum = orbitalArr.reduce((a, c) => a + c, 0);
-  return orbitalSum;
+
+  return data.asteroids
+    .filter((droid) => droid.orbitalPeriod)
+    .map((droid) => droid.orbitalPeriod)
+    .reduce((acc, droid) => {
+      acc += droid;
+      return acc;
+    }, 0);
 }
 
 // === TEST YOURSELF ===
